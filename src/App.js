@@ -10,17 +10,18 @@ function App() {
    const [result, setResult]=useState("");
   const[value, setValue]=useState("");
 
-  // const ops= ["+","-","/","*","^","="];
+  const ops= ["+","-","/","*","^","="];
   
-const click=(e)=>{
-  // ops.forEach(function(k){
-  //   if(k===e){
-  //     temp2=1;
-  //     value=value.slice(0,-1);
-  //   }
-    
-  // })
-  if(temp===0 ){
+
+const click=(e)=>{ 
+  //birden fazla operatör yan yana gelmemeli
+  if(ops.includes(e) && value==='' ||
+    ops.includes(e) && ops.includes(value.slice(-1))
+  ){
+    return;
+  }
+  else{
+     if(temp===0 ){
     
       setValue(value.concat(e));
     
@@ -30,6 +31,8 @@ const click=(e)=>{
     clear()
     
   }
+  }
+ 
  
 }
 const clear=()=>{
