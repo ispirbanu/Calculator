@@ -1,7 +1,7 @@
 
 import {useState} from 'react';
 
-
+//hesaplama işlemi yapıldıktan sonra input içeriğini temizlemek üzerine yazım yapılmaması için geçici değişken
 let temp=0;
 
 function App() {
@@ -20,6 +20,9 @@ const click=(e)=>{
   ){
     return;
   }
+//   else{
+//     setValue(value.concat(e));
+//   }
   else{
      if(temp===0 ){
     
